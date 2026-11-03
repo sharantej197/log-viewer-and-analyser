@@ -2,6 +2,7 @@ services:
   - type: web
     name: log-viewer-analyser
     runtime: docker
+    plan: free
     dockerfilePath: ./Dockerfile
     healthCheckPath: /
     envVars:
