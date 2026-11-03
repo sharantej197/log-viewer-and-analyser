@@ -79,3 +79,7 @@ html{
 .nav:hover{
     background-color: #3D52A0;
 }
+
+#part2 {
+    color: black;
+}
