@@ -9,6 +9,7 @@
         </nav>
         <meta charset="utf-8">
         <title>Upload Log Files</title>
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
@@ -40,3 +41,5 @@
     <form method="post" action="{{ url_for('reset_workspace') }}"><button type="submit">Clear my session data</button></form>
     </body>
 </html>
+
+
