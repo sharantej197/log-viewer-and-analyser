@@ -1,0 +1,19 @@
+# User uploads and generated workspaces
+given.log
+data.csv
+originaldata.csv
+instance/
+static/plots/*
+!static/plots/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.backup
+
+# Git and editor files
+.DS_Store
+.vscode/

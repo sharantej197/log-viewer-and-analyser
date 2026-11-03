@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <script src="{{ url_for('static', filename='finalpage.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='finalpage.css') }}">
+    <head>
+        <nav id="navbar">
+            <a class="nav" href="/">Upload</a>
+            <a class="nav" href="/Display">Tabular Display</a>
+            <a class="nav" href="/DataVisualisation">Visualisation</a>
+        </nav>
+        <title>
+            Data Visualisation
+        </title>
+    </head>
+    <body>
+        {% if message=="ok" %}
+        <div class="row">
+            <div class="column">
+                <img src="{{ url_for('workspace_file', filename='EperSvsT.svg') }}" alt="Plot Of Events per Second Vs Time" id="i1">
+                <div class="b">
+                    <a href="{{ url_for('workspace_file', filename='EperSvsT.png', download=1) }}">Download as PNG</a>
+                    <a href="{{ url_for('workspace_file', filename='EperSvsT.pdf', download=1) }}">Download as PDF</a>
+                </div>
+            </div>
+            <div class="column">
+                <img src="{{ url_for('workspace_file', filename='LsPiChart.svg') }}" alt="Pie Chart of type of EventIds" id="i2">
+                <div class="b">
+                    <a href="{{ url_for('workspace_file', filename='LsPiChart.png', download=1) }}">Download as PNG</a>
+                    <a href="{{ url_for('workspace_file', filename='LsPiChart.pdf', download=1) }}">Download as PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <img src="{{ url_for('workspace_file', filename='Esbar.svg') }}" alt="Pie Chart of type of EventIds" id="i3">
+                <div class="b">
+                    <a href="{{ url_for('workspace_file', filename='Esbar.png', download=1) }}">Download as PNG</a>
+                    <a href="{{ url_for('workspace_file', filename='Esbar.pdf', download=1) }}">Download as PDF</a>
+                </div>
+            </div>
+            <div class="column">
+                <img src="{{ url_for('workspace_file', filename='Realtime.svg') }}" alt="Realtime analysis of events per second" id="i4">
+                <div class="b">
+                    <a href="{{ url_for('workspace_file', filename='Realtime.png', download=1) }}">Download as PNG</a>
+                    <a href="{{ url_for('workspace_file', filename='Realtime.pdf', download=1) }}">Download as PDF</a>
+                </div>
+            </div>
+        </div>
+
+        {% endif %}
+        {% if message=="invalid" %}<h2 id="notfound">Invalid date/time range. Select a valid start and end.</h2>{% endif %}
+        {% if message=="none" %}
+        <h2 id="notfound">No Data Found In The Given Filter</h2>
+        {% endif %}
+        <div id="filter1">
+        <h2 style="text-align: center;font-family: Arial, Helvetica, sans-serif;color: white;">Want to Filter the data?</h2>
+        <div id="form">
+        <form method="post" enctype="multipart/form-data" style="text-align: center;">
+            <h5>From:</h5>
+            <label for="fromdate">Date:</label>
+            <input type="date" id="fromdate" name="fromdate">
+            <label for="fromtime">Time:</label>
+            <input type="time" id="fromtime" name="fromtime" step="1">
+            <h5>To:</h5>
+            <label for="todate">Date:</label>
+            <input type="date" id="todate" name="todate">
+            <label for="totime">Time:</label>
+            <input type="time" id="totime" name="totime" step="1">
+            <br>
+            <br>
+            <button type="submit" onclick="return checkfilter()">Filter</button>
+            <div id="hide" hidden>
+            <h4 id="notfound">Please Select All The Fields</h4>
+            </div>
+        </form>
+        </div>
+        </div>
+
+
+    <form method="post" action="{{ url_for('reset_workspace') }}"><button type="submit">Clear my session data</button></form>
+    </body>
+</html>

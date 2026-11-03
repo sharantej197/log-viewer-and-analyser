@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="{{ url_for('static', filename='uploadpage.css') }}">
+    <head>
+        <nav id="navbar">
+            <a class="nav" href="/">Upload</a>
+            <a class="nav" href="/Display">Tabular Display</a>
+            <a class="nav" href="/DataVisualisation">Visualisation</a>
+        </nav>
+        <meta charset="utf-8">
+        <title>Upload Log Files</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div id="whole">
+        <h1 id="heading">Upload the Log file:</h1>
+        <form id="form" method="post" enctype="multipart/form-data" style="text-align: center;">
+            <div id="part1">
+            <label for="but1" style="font-size: x-large;">Choose File:</label>
+            <input type="file" id="but1" name="file">
+            <br><br>
+            <button type="submit" id="but2">Upload file</button>
+            </div>
+            <h4>Output:</h4>
+            {% if error %}<div id="part2" role="alert">{{ error }}</div>{% endif %}
+        </form>
+       </div>
+       <div id="whole2">
+        <h3>Pro Tips:</h3>
+        <ul>
+            <li>Only Files ending with .log are accepted</li>
+            <li>Only Apache log files with all lines being proper are accepted</li>
+            <li>You can apply filters to tables in upload page</li>
+            <li>In Display Page, Please wait after applying the filters to see the results</li>
+            <li>Filtering Based on Time is also available in Visualisation page</li>
+            <li>Plot in Display page doesnt include table filters</li>
+            <li>Each browser session has its own separate uploaded data.</li>
+        </ul>
+        </div>
+    <form method="post" action="{{ url_for('reset_workspace') }}"><button type="submit">Clear my session data</button></form>
+    </body>
+</html>

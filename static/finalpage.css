@@ -1,0 +1,104 @@
+#i1,#i2,#i3,#i4{
+    padding: 2vmin;
+    background-color: #ADBBDA;
+    border-radius: 4vmin;
+}
+html{
+    background-color: #EDE8F5;
+}
+.b{
+    margin: 1vmin;
+}
+#filter1{
+    background-color: #7091E6;
+    padding: 1vmin;
+    border-radius: 4vmin;
+    border-style:solid;
+    border-width: 0.5vmin;
+}
+#form{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ADBBDA;
+    border-radius: 4vmin;
+    padding-top: 0.5vmin;
+    padding-bottom: 0.5vmin;
+    font-size: large;
+}
+#notfound{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2vmin;
+    background-color: #ADBBDA;
+    border-radius: 4vmin;
+    color: red;
+
+}
+#navbar{
+    background-color: #ADBBDA;
+    padding: 1vmin;
+    border-color: black;
+    border-top: 0.3vmin;
+    border-bottom: 0.3vmin;
+    border-left: 0vmin;
+    border-right: 0vmin;
+    border-style: solid;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2vmin;
+    cursor: pointer;
+
+
+}
+.nav{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #7091E6;
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+    padding-left: 4vmin;
+    padding-right: 4vmin;
+    border-radius: 1vmin;
+    border-style: solid;
+    border-color: black;
+    color: white;
+    font-size: large;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav:hover{
+    background-color: #3D52A0;
+}
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4vmin;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2vmin;
+}
+button{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #8697C4;
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+    padding-left: 4vmin;
+    padding-right: 4vmin;
+    border-radius: 1vmin;
+    border-style: solid;
+    border-color: black;
+    color:white;
+    font-size: large;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 1vmin;
+}
+button:hover{
+    background-color: #3D52A0;
+}

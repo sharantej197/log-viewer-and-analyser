@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="{{ url_for('static', filename='displaypage.css') }}">
+    <script src="{{ url_for('static', filename='displaypage.js') }}"></script>
+    <head>
+        <nav id="navbar">
+            <a class="nav" href="/">Upload</a>
+            <a class="nav" href="/Display">Tabular Display</a>
+            <a class="nav" href="/DataVisualisation">Visualisation</a>
+        </nav>
+        <title>
+            Log Display
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div id="top1">
+        <label for="but1">Download The file in CSV format:</label>
+        <button onclick="downloadfile()" id="but1">Download</button>
+        </div>
+        <br>
+        <div id="top2">
+        <label for="but2">Plot them<span style="font-style: italic;">(Without table filters)</span>:</label>
+        <button onclick="visual()" id="but2">Analyse</button>
+        </div>
+        <h3>Structured Data:</h3>
+        <table id="table">
+           <thead>
+            <th>LineID</th>
+            <th>Time</th>
+            <th>Level
+                <select id="Lsfilter" onchange="filter()">
+                    <option value="">All</option>
+                    <option value="notice">notice</option>
+                    <option value="error">error</option>
+                </select>
+            </th>
+            <th>Content</th>
+            <th>Event ID
+                <select id="Esfilter" onchange="filter()">
+                    <option value="">All</option>
+                    <option value="E1">E1</option>
+                    <option value="E2">E2</option>
+                    <option value="E3">E3</option>
+                    <option value="E4">E4</option>
+                    <option value="E5">E5</option>
+                    <option value="E6">E6</option>
+                </select>
+            </th>
+           </thead>
+           {% if rows %}<tbody>{% for row in rows %}<tr>{% for cell in row %}<td>{{ cell }}</td>{% endfor %}</tr>{% endfor %}</tbody>{% endif %}
+        </table>
+    <form method="post" action="{{ url_for('reset_workspace') }}"><button type="submit">Clear my session data</button></form>
+    </body>
+</html>

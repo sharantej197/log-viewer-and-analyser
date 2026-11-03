@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: log-viewer-analyser
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: COOKIE_SECURE
+        value: "true"

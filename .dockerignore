@@ -1,0 +1,12 @@
+.git
+.venv
+venv
+__pycache__
+*.py[cod]
+.env
+instance
+given.log
+data.csv
+originaldata.csv
+static/plots/*
+!static/plots/.gitkeep
